@@ -1,7 +1,7 @@
 
-# FastAPI Demo - Products API
+# Telusko Trac - Product Inventory Management
 
-A simple FastAPI application demonstrating GET and POST endpoints for product management and inventory tracking.
+A comprehensive product inventory management system built with FastAPI backend and React frontend, providing seamless tracking and management of product inventory.
 
 ## Features
 
@@ -36,7 +36,7 @@ A simple FastAPI application demonstrating GET and POST endpoints for product ma
 ## Project Structure
 
 ```
-invoTrack/
+stocksphere/
 ├── main.py          # FastAPI application with endpoints
 ├── models.py        # Pydantic models
 ├── .gitignore       # Git ignore file
