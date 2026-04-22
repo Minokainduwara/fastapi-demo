@@ -7,9 +7,23 @@ def greet():
     return "Hello, World!"
 
 products = [
-    Product(1, "Laptop", "A high-performance laptop", 999.99, 10),
-    Product(2, "Smartphone", "A latest model smartphone", 499.99, 20)
+    Product(id=1, name="Laptop", description="A high-performance laptop", price=999.99, quantity=10),
+    Product(id=2, name="Smartphone", description="A powerful smartphone", price=499.99, quantity=20),
+    Product(id=3, name="Headphones", description="Noise-cancelling headphones", price=199.99, quantity=15),
+
 ]
 @app.get("/products")
 def get_products():
     return products
+
+@app.get("/products/{product_id}")
+def get_product_by_id(product_id: int):
+    for product in products:
+        if product.id == product_id:
+            return product
+    return {"error": "Product not found"}
+
+@app.post("/products")
+def create_product(product: Product):
+    products.append(product)
+    return product
